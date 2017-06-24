@@ -118,7 +118,7 @@ for f in ${OUTPUT_DIR}/*.en; do
 done
 
 # Clean training corpus
-for f in ${OUTPUT_DIR}/train.en; do
+for f in ${OUTPUT_DIR}/train.tok.en; do
   fbase=${f%.*}
   echo "Cleaning ${fbase}..."
   ${OUTPUT_DIR}/mosesdecoder/scripts/training/clean-corpus-n.perl $fbase de en "${fbase}.clean" 1 80
