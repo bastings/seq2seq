@@ -117,8 +117,8 @@ for f in ${OUTPUT_DIR}/*.en; do
   ${OUTPUT_DIR}/mosesdecoder/scripts/tokenizer/tokenizer.perl -q -l en -threads 8 < $f > ${f%.*}.tok.en
 done
 
-# Clean all corpora
-for f in ${OUTPUT_DIR}/*.en; do
+# Clean training corpus
+for f in ${OUTPUT_DIR}/train.en; do
   fbase=${f%.*}
   echo "Cleaning ${fbase}..."
   ${OUTPUT_DIR}/mosesdecoder/scripts/training/clean-corpus-n.perl $fbase de en "${fbase}.clean" 1 80
